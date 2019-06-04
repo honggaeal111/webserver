@@ -1,0 +1,53 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+header {
+  font-size: 85px;
+  text-align: center;
+  font-style: monospace;
+  font-weight: 100;
+  color: white;
+
+  background-image: url(image/header.jpg);
+  padding: 50px;
+  margin: 0;
+  height: 20%;
+}
+nav{
+  height: 80%;
+}
+.menu {
+  width: 250px;
+  height: 80%;
+  float: left ;
+  background-color: blue;
+
+  display: block;
+}
+
+.menu div{
+  text-align: center;
+  font-style: white;
+  font-size: 30px;
+  margin: 25px;
+}
+.login {
+  width :400px;
+  height: 200px;
+  padding: 50px;
+  margin: auto;
+  color: black;
+  //background: #9FE3DE;
+  float: left;
+  border: double 5px #14D3F5;
+
+  text-align: center;
+  font-size: 30px;
+}
+input[type=text]:focus {
+  font-size: 0.8em;
+}

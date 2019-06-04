@@ -1,0 +1,173 @@
+<html>
+ <body>
+  <head>
+   <script>
+     function check_id()
+   {
+     window.open("check_id.php?id=" + document.member_form.id.value,
+         "IDcheck",
+"left=200,top=200,width=250,height=100,scrollbars=no,resizable=yes");
+   }
+
+   function check_input()
+   {
+      if (!document.member_form.id.value)
+      {
+          alert("id 오류");
+          document.member_form.id.focus();
+          return;
+      }
+
+      if (!document.member_form.name.value)
+      {
+          alert("이름 안씀");
+          document.member_form.name.focus();
+          return;
+      }
+
+      if (!document.member_form.passwd.value)
+      {
+          alert("비밀번호 안씀");
+          document.member_form.passwd.focus();
+          return;
+      }
+
+      if (!document.member_form.passwd_confirm.value)
+      {
+          alert("1111");
+          document.member_form.passwd_confirm.focus();
+          return;
+      }
+
+      if (document.member_form.passwd.value !=
+            document.member_form.passwd_confirm.value)
+      {
+          alert("비밀번호 일치x");
+          document.member_form.passwd.focus();
+          document.member_form.passwd.select();
+          return;
+      }
+
+      document.member_form.submit();
+   }
+
+   function reset_form()
+   {
+      document.member_form.id.value = "";
+      document.member_form.name.value = "";
+      document.member_form.passwd.value = "";
+      document.member_form.passwd_confirm.value = "";
+      document.member_form.phone1.value = "";
+      document.member_form.phone2.value = "";
+      document.member_form.phone3.value = "";
+      document.member_form.address.value = "";
+
+      document.member_form.id.focus();
+
+      return;
+   }
+
+   </script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+ <body topmargin="0">
+           <form  name=member_form method=post action="testq.php">
+    <table border=0 cellspacing=0 cellpadding=0 align=center
+            width="682" >
+        <tr>
+          <td bgcolor=DEDEDE>
+          <!---------- ȸ������ �Է� ��--------------->
+    <table border="0" width=682 cellspacing="1" cellpadding="4">
+        <tr>
+          <td width=20% bgcolor=#F7F7F7 align=right
+              style=padding-right:6>
+              * 1 :</td>
+          <td bgcolor=#FFFFFF style=padding-left:10>
+             <input type=text size=12 class=m_box maxlength=12
+                    name=id>
+             <font color=#2590B3></font>
+             <input type=button value="2"
+                 onClick="check_id()">
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor=#F7F7F7 align=right style=padding-right:6>
+          *3 :</td>
+          <td bgcolor=#FFFFFF style=padding-left:10>
+             <input type=text size=12 class=m_box maxlength=12
+                    name=name></td>
+        </tr>
+        <tr>
+          <td bgcolor=#F7F7F7 align=right style=padding-right:6>
+          * 4:</td>
+          <td bgcolor=#FFFFFF style=padding-left:10>
+            <input type=password size=10 class=m_box maxlength=10
+                   name=passwd><font color=#2590B3>
+              </font/></td>
+        </tr>
+        <tr>
+          <td bgcolor=#F7F7F7 align=right style=padding-right:6>
+               * 5:</td>
+          <td bgcolor=#FFFFFF style=padding-left:10>
+             <input type=password size=12 class=m_box maxlength=12
+                    name=passwd_confirm> </td>
+        </tr>
+        <tr>
+          <td bgcolor=#F7F7F7 align=right style=padding-right:6>
+          6 :</td>
+          <td bgcolor=#FFFFFF style=padding-left:10>
+             <input type=radio name=sex value='M' checked>8
+             <input type=radio name=sex value='W'>7
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor=#F7F7F7 align=right style=padding-right:6>
+          9 :</td>
+          <td bgcolor=#FFFFFF style=padding-left:10>
+             <select class=input2 name=phone1>
+              <option value=''>10</option>
+              <option value='010'>010</option>
+              <option value='011'>011</option>
+              <option value='016'>016</option>
+              <option value='017'>017</option>
+              <option value='018'>018</option>
+              <option value='019'>019</option>
+             </select>
+            - <input type=text size=4 class=m_box name=phone2
+                maxlength=4>
+            - <input type=text size=4 class=m_box name=phone3
+                maxlength=4>
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor=#F7F7F7 align=right style=padding-right:6
+              rowspan=3>
+              11 :</td>
+        </tr>
+        <tr>
+          <td bgcolor=#FFFFFF style=padding-left:10>
+             <input type=text size=50 class=m_box name=address></td>
+        </tr>
+
+    </table>
+        <!---------- ȸ������ �Է� �� ��--------------->
+          </td>
+        </tr>
+        <tr>
+          <td align=center height=60>
+           <div border="0" onclick=check_input()>확인</div>
+           <div border="0" onclick=reset_form()>리셋</div>
+          </td>
+        </tr>
+           </form>
+    </table>
+          </td>
+        </tr>
+    </table>
+    <!------------- ������ ���̺� �� ---------------->
+
+          </td>
+        </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    function check_id()
+  {
+    if(!document.member_form.id.value){
+      alert("아이디를 입력해 주세요")
+    }
+    else {
+      window.open("check_id.php?id=" + document.member_form.id.value,
+          "IDcheck",
+  "left=200,top=200,width=250,height=100,scrollbars=no,resizable=yes");
+    }
+
+  }
+
+    function check_input()
+    {
+       if (!document.member_form.id.value)
+       {
+           alert("id 오류");
+           document.member_form.id.focus();
+           return;
+       }
+
+       if (!document.member_form.name.value)
+       {
+           alert("이름 안씀");
+           document.member_form.name.focus();
+           return;
+       }
+
+       if (!document.member_form.passwd.value)
+       {
+           alert("비밀번호 안씀");
+           document.member_form.passwd.focus();
+           return;
+       }
+
+       if (!document.member_form.passwd_confirm.value)
+       {
+           alert("1111");
+           document.member_form.passwd_confirm.focus();
+           return;
+       }
+
+       if (document.member_form.passwd.value !=
+             document.member_form.passwd_confirm.value)
+       {
+           alert("비밀번호 일치x");
+           document.member_form.passwd.focus();
+           document.member_form.passwd.select();
+           return;
+       }
+
+       document.member_form.submit();
+    }
+
+
+    function reset_form()
+    {
+       document.member_form.id.value = "";
+       document.member_form.name.value = "";
+       document.member_form.passwd.value = "";
+       document.member_form.passwd_confirm.value = "";
+       document.member_form.tel.value = "";
+       document.member_form.address.value = "";
+
+       document.member_form.id.focus();
+
+       return;
+    }
+    </script>
+  </head>
+  <body>
+      <form name="member_form" action="testq.php" method="post">
+      id : <input type="text" name="id">
+      <input type="button" onclick="check_id();" value="중복 확인">
+      pw: <input type="text" name="passwd">
+      pwconfirm: <input type="text" name="passwd_confirm">
+      name: <input type="text" name="name">
+      sex: <input type="text" name="sex">
+      tel: <input type="text" name="tel">
+      address: <input type="text" name="address">
+      <input type="button" value="회원가입" onclick="check_input();">
+      <input type="button" value="초기화" onclick="reset_form();">
+      </form>
+  </body>
+</html>
